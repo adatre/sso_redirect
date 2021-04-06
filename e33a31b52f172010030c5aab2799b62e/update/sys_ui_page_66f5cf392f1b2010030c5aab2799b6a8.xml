@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[window.location.href = gel('target_url').value;]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_571970_redirect_external_page_redirect.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:evaluate>
+		
+		var userID = gs.getUserName();
+		var baseUrl= gs.getProperty('x_571970_redirect.target.instance.base.url');
+		var ssoID= gs.getProperty('x_571970_redirect.target.instance.digestSSO.sysid');
+		var token = new x_571970_redirect.GenerateMAC().getMacToken();	
+		
+	var url = baseUrl + "/login_with_sso.do?glide_sso_id=" + ssoID  + "${AMP}" + "user=" + userID + "${AMP}" +"token=" + token;
+		
+	</g:evaluate>
+	
+	<input type="hidden" name="target_url" id="target_url" value="${url}"></input>
+</j:jelly>]]></html>
+        <name>external_page_redirect</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-04 17:48:51</sys_created_on>
+        <sys_id>66f5cf392f1b2010030c5aab2799b6a8</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>external_page_redirect</sys_name>
+        <sys_package display_value="Redirect External SSO" source="x_571970_redirect">e33a31b52f172010030c5aab2799b62e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Redirect External SSO">e33a31b52f172010030c5aab2799b62e</sys_scope>
+        <sys_update_name>sys_ui_page_66f5cf392f1b2010030c5aab2799b6a8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-06 11:08:49</sys_updated_on>
+    </sys_ui_page>
+</record_update>

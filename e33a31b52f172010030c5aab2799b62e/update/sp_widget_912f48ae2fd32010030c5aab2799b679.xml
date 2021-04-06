@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($window) {
+  /* widget controller */
+  var c = this;
+	
+	c.redirect = function(){
+		$window.open(c.data.url, '_blank');
+	}
+	
+	};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>external_login_redirect</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>External login redirect</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	
+	data.btnTitle = gs.getMessage('external.login.btn.name');
+	
+	var userID = gs.getUserName();
+	var baseUrl= gs.getProperty('x_571970_redirect.target.instance.base.url');
+	var ssoID= gs.getProperty('x_571970_redirect.target.instance.digestSSO.sysid');
+	var token = new x_571970_redirect.GenerateMAC().getMacToken();	
+
+	data.url = baseUrl + "/login_with_sso.do?glide_sso_id=" + ssoID  + "&user=" + userID + "&token=" + token;
+
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-06 12:15:49</sys_created_on>
+        <sys_id>912f48ae2fd32010030c5aab2799b679</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>External login redirect</sys_name>
+        <sys_package display_value="Redirect External SSO" source="x_571970_redirect">e33a31b52f172010030c5aab2799b62e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Redirect External SSO">e33a31b52f172010030c5aab2799b62e</sys_scope>
+        <sys_update_name>sp_widget_912f48ae2fd32010030c5aab2799b679</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-06 12:44:57</sys_updated_on>
+        <template><![CDATA[<div>
+  <button type="button" class="btn btn-primary" ng-click="c.redirect()">{{::data.btnTitle}}</button>
+</div>]]></template>
+    </sp_widget>
+</record_update>

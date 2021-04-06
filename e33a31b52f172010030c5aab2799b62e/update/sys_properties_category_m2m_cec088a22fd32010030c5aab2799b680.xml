@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties_category_m2m">
+    <sys_properties_category_m2m action="INSERT_OR_UPDATE">
+        <category display_value="External SSO Properties">0820c0a22fd32010030c5aab2799b6b8</category>
+        <order>200</order>
+        <property display_value="x_571970_redirect.target.instance.digestSSO.sysid" name="x_571970_redirect.target.instance.digestSSO.sysid">847d3b9a2f932010030c5aab2799b6cc</property>
+        <sys_class_name>sys_properties_category_m2m</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-06 11:13:03</sys_created_on>
+        <sys_id>cec088a22fd32010030c5aab2799b680</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_571970_redirect.target.instance.digestSSO.sysid.External SSO Properties</sys_name>
+        <sys_package display_value="Redirect External SSO" source="x_571970_redirect">e33a31b52f172010030c5aab2799b62e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Redirect External SSO">e33a31b52f172010030c5aab2799b62e</sys_scope>
+        <sys_update_name>sys_properties_category_m2m_cec088a22fd32010030c5aab2799b680</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-04-06 11:13:03</sys_updated_on>
+    </sys_properties_category_m2m>
+</record_update>

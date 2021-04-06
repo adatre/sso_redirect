@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_571970_redirect.GenerateMAC</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>GenerateMAC</name>
+        <script><![CDATA[var GenerateMAC = Class.create();
+GenerateMAC.prototype = {
+	initialize: function() {
+	},
+
+	getMacToken: function(){
+		var user = gs.getUserName();
+		var mac = new CertificateEncryption;
+		var key = gs.getProperty('x_571970_redirect.secret.key');
+		key = gs.base64Encode(key);
+		return mac.generateMac(key, "HmacSHA1", user);
+	},
+	type: 'GenerateMAC'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-04-04 12:12:08</sys_created_on>
+        <sys_id>6a5a3db52f172010030c5aab2799b662</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>GenerateMAC</sys_name>
+        <sys_package display_value="Redirect External SSO" source="x_571970_redirect">e33a31b52f172010030c5aab2799b62e</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Redirect External SSO">e33a31b52f172010030c5aab2799b62e</sys_scope>
+        <sys_update_name>sys_script_include_6a5a3db52f172010030c5aab2799b662</sys_update_name>
+        <sys_updated_by>ashwin.datre</sys_updated_by>
+        <sys_updated_on>2021-04-04 17:57:29</sys_updated_on>
+    </sys_script_include>
+</record_update>
